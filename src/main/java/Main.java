@@ -47,20 +47,26 @@ public class Main {
     }
 
     static void menu() {
-        int opcao = opcao();
-        if (opcao == 0) return;
+        while(true) {
+            int opcao = opcao();
 
-        switch (opcao) {
-            case 1 -> addMusic();
-            case 2 -> listMusic();
-            case 3 -> searchMusic();
-            case 4 -> filterMusic();
-            case 5 -> shuffleMusic();
-            case 6 -> deleteMusic();
+            if (opcao == 0) {
+                System.out.println("Saindo do programa");
+                break;
+            }
 
-            default -> {
-                menu();
-                System.out.println("Opção inválida");
+            switch (opcao) {
+                case 1 -> addMusic();
+                case 2 -> listMusic();
+                case 3 -> searchMusic();
+                case 4 -> filterMusic();
+                case 5 -> shuffleMusic();
+                case 6 -> deleteMusic();
+
+                default -> {
+                    System.out.println("Opção inválida");
+                    menu();
+                }
             }
         }
     }
