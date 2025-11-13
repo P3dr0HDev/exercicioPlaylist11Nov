@@ -89,12 +89,12 @@ public class Main {
         for (int i = 0; i < Main.musicList.size(); i++) {
             Music music = Main.musicList.get(i);
             System.out.printf("""
-                                +++++++++++++++++++
-                                %d Músicas
-                                Nome: %s
-                            }
-                    menu();           Estilo: %s
-                                BPM: %d
+                    +++++++++++++++++++
+                    %d Músicas
+                    Nome: %s
+                    Estilo: %s
+                    BPM: %d
+                    +++++++++++++++++++
                     """, i, music.getName(), music.getStyle(), music.getBpm());
         }
         menu();
@@ -116,7 +116,7 @@ public class Main {
 
             if (index >= 0 && index < Main.musicList.size()) {
                 System.out.println("Música removida!");
-                System.out.println("Mùsica removida!");
+
                 break;
             } else {
                 System.out.println("ERRO. Música não existe");
@@ -140,9 +140,10 @@ public class Main {
 
             if (music.getName().toLowerCase().contains(search)) {
                 System.out.printf("""
-                                        Índice: %d
-                                }
-                        menu();               Nome: %s
+                        +++++++++++++++
+                        Índice: %d
+                        Nome: %s
+                        +++++++++++++++
                         """, i, music.getName());
             }
         }
@@ -174,6 +175,7 @@ public class Main {
                         Nome: %s
                         Estilo: %s
                         BPM: %d
+                        +++++++++++++++++++
                         """, i, music.getName(), music.getStyle(), music.getBpm());
                 encontrouMusica = true;
             }
@@ -182,8 +184,8 @@ public class Main {
         if (!encontrouMusica) {
             System.out.println("Nenhuma música encontrada com esse BPM");
         }
-
         menu();
+
     }
 
     static void shuffleMusic() {
@@ -206,6 +208,7 @@ public class Main {
                     Nome: %s
                     Estilo: %s
                     BPM: %d
+                    +++++++++++++++++++
                     """, i, music.getName(), music.getStyle(), music.getBpm());
         }
         menu();
